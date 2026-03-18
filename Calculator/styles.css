@@ -1,0 +1,93 @@
+:root {
+    --bg-color: #e0e0e0;
+    --calc-bg: #f5f5f5;
+    --display-bg: #434a53;
+    --number-btn-color: #ffffff;
+    --operator-btn-color: #ff9500;
+    --other-btn-color: #d4d4d2;
+    --text-color: #333;
+    --font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    font-family: var(--font-family);
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    background-color: var(--calc-bg);
+    width: 320px;
+}
+
+#display {
+    background-color: var(--display-bg);
+    color: white;
+    font-size: 2.5em;
+    padding: 20px;
+    text-align: right;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    height: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 20px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.1s;
+    color: var(--text-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    user-select: none;
+}
+
+button:active {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+    transform: translateY(1px);
+}
+
+.number, #decimal {
+    background-color: var(--number-btn-color);
+}
+
+.operator, #equals {
+    background-color: var(--operator-btn-color);
+    color: white;
+    font-weight: bold;
+}
+
+.operator:hover, #equals:hover {
+    background-color: #cc7800;
+}
+
+.utility {
+    background-color: var(--other-btn-color);
+}
+
+.utility:hover {
+    background-color: #b8b8b6;
+}
+
+#zero {
+    grid-column: span 2;
+    border-radius: 50px;
+    text-align: left;
+    padding-left: 35px;
+}
